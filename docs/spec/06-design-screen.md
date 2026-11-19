@@ -18,7 +18,7 @@
 - **GUI-004** [Decided] **Single selection only** in this iteration: one object (key, controller, outline element, or reference image) at a time. No multi-select, marquee, or group move.
 - **GUI-005** [Decided] A **properties panel** shows and edits the exact fields of the selected object, including arbitrary off-grid positions.
 
-- **GUI-024** [Proposed] Keys are drawn as vector graphics generated from the design data (size, legend, rotation), with no per-key image files. SVG is the natural fit for the web UI.
+- **GUI-024** [Proposed] Keys are drawn as vector graphics generated from the design data (keycap, legend, rotation), with no per-key image files. SVG is the natural fit for the web UI.
 
 ## Controllers on the canvas
 

@@ -12,6 +12,16 @@ It is built to be driven by **humans and AI alike**: everything the GUI can do i
 
 ---
 
+## Why the keyboard matters
+
+The keyboard is the one part of a computer you actually touch. Screens, sound and software are what you see and hear, but the keyboard is where your hands meet the machine, often for hours at a time.
+
+That contact builds muscle memory. Your fingers learn where every key sits, how far it travels and how it feels when it registers. They remember long after you have forgotten the commands you typed. Anyone who has gone back to a machine from years ago knows the moment their hands find the keys before their head does.
+
+So a vintage machine with the wrong keyboard is not quite the same machine. A replacement keyboard, a recreation, or a modern board that brings back an old layout is about more than function. It restores that physical connection. VintageMatrix exists to make those keyboards easier to design and build.
+
+---
+
 ## Manifesto
 
 VintageMatrix is a **collaborative project**.

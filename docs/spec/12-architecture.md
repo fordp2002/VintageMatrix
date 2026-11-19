@@ -31,6 +31,10 @@
 - **ARCH-003** [Proposed] Each module lives in its own top-level source directory with its own README stating its purpose, the config sections it reads/writes, the requirement prefixes it implements, and its licence.
 - **ARCH-004** [Proposed] Each module can be built and tested on its own (`test` target per module), so a contributor working on one generator never needs the others installed.
 
+## Separate tools
+
+- **ARCH-007** [Decided] A **BOM** (bill of materials) is not produced by VintageMatrix itself; it can be a separate program that reads the design file. VintageMatrix records the BOM-relevant data in the design (switch, keycap, row angle, homing mark: KEY-019, KEY-021), editable in the properties panel. The same applies to any other output that only needs to read the design (PRIN-001, PRIN-006).
+
 ## External services
 
 - **ARCH-006** [Decided] External services (today only Freerouting, PCB-029) are **optional**. VintageMatrix MUST work fully without them, and an unavailable service only disables the feature that uses it.

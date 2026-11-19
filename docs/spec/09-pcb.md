@@ -33,7 +33,7 @@ All PCB reads and writes go through KiCad's Python API ([14-kicad](14-kicad.md))
 ## Diodes
 
 - **PCB-034** [Decided] The generator **places and connects** every diode the design's scheme requires (MAT-005), as tagged elements: `key:<id>/diode`, `row:<id>/diode`, or `col:<id>/diode`.
-- **PCB-035** [Decided] **Key diodes:** each key's switch and diode are wired in series between the key's row net and column net, with the diode oriented by `direction` (MAT-015).
+- **PCB-035** [Decided] **Key diodes:** each key's switch and diode are wired in series between the key's row net and column net, with the diode oriented by `direction` (MAT-015). A key with Key diode set to No (KEY-018) has its switch wired directly between row and column.
 - **PCB-036** [Proposed] **Pad conventions**, insisted on as for KEY-009: switch footprints have pads `1` and `2`; diode footprints have pad `1` = cathode and pad `2` = anode, as in KiCad's standard libraries. Footprints that don't follow these conventions are not supported.
 - **PCB-037** [Proposed] The net between a key's switch and its diode is named `VM_K_<key id>`.
 - **PCB-038** [Decided] **Row/column diodes:** one diode per row (or column) line, in series between the matrix line and the controller pin or connector side, oriented by `direction`.

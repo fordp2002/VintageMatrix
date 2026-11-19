@@ -16,9 +16,14 @@
 
 ## Key diodes
 
-- **KEY-010** [Decided] When the diode scheme is `key` (MAT-005), every key gets one diode placed relative to its stem centre (KEY-002), and the PCB generator connects it (PCB-035).
+- **KEY-010** [Decided] When the diode scheme is `key` (MAT-005), every key gets one diode placed relative to its stem centre (KEY-002) and connected by the PCB generator (PCB-035), unless that key's **Key diode** is set to **No** (KEY-018).
 - **KEY-012** [Proposed] Key diodes are placed for every key except those with a side marked **unconnected** (MAT-019), including keys not yet connected. The board layout then does not shift while rows and columns are being allocated; the diode gets its nets once both sides are connected.
-- **KEY-011** [Decided] The key diode's position and rotation relative to the stem centre are a **project-wide default** (`matrix.diodes.keyOffset`, `matrix.diodes.keyRotation`), applied in the key's own rotated frame so the diode follows the key. A key may **override** them in the properties panel (`diode.offset`, `diode.rotation` on the key).
+- **KEY-011** [Decided] The key diode's position and rotation relative to the stem centre are **project-wide** (`matrix.diodes.keyOffset`, `matrix.diodes.keyRotation`), the same for every key, applied in the key's own rotated frame so the diode follows the key. There is no per-key placement override.
+- **KEY-018** [Decided] Each key has a **Key diode: Yes/No** setting (`diode`, boolean, default Yes), shown in the properties panel. It only applies with the `key` scheme. A key set to No gets no diode, and its switch is wired directly between its row and column.
+- **KEY-019** [Decided] A key has **no size property**. Its size and shape come from its **keycap**, chosen in the properties panel alongside its **switch**.
+- **KEY-020** [Proposed] Keycaps come from a built-in list. Each entry gives the keycap's size (in `u`, DIM-012), its shape, and whether it needs a stabiliser.
+- **KEY-021** [Decided] A key's keycap also records its **row angle** (the sculpted profile row) and whether it has a **homing mark** (e.g. the bumps on F and J). These are **for a BOM only** (ARCH-007): they change nothing on the PCB or in the firmware. They are edited in the properties panel from the start. The canvas shows homing marks.
+- **KEY-022** [Proposed] Row angle is `R1` to `R4`, or absent for a uniform (flat) profile. The homing mark is a boolean, default No.
 
 - **KEY-013** [Decided] A key without a `position` is valid in a design that does not target a PCB. In a design that does, generating the PCB with such a key is a semantic **error**. A key without a position is not drawn on the canvas.
 
@@ -34,17 +39,23 @@
 |---|---|---|
 | `id` | string | Stable identifier (CON-009). |
 | `position` | `{x, y}` dimension values | Stem centre. |
-| `size` | `{w, h}` dimension values | Keycap footprint, usually in `u`. Used for drawing, collision checks, stabiliser choice. |
+| `keycap` | string | The keycap, e.g. `1u`, `2.25u`, `6.25u`, `iso-enter` (KEY-019). Default `1u`. |
+| `keycapRow` | string | Keycap row angle, `R1`–`R4`; absent for a uniform profile. BOM only (KEY-021). |
+| `homing` | boolean | Keycap has a homing mark. BOM only (KEY-021). Default No. |
 | `matrix` | `{row, col}` | Matrix address (MAT-007). |
 | `keycode` | string | QMK keycode for the base layer, e.g. `KC_A`. |
 | `layers` | array of strings | Keycodes for additional layers. |
-| `legend` | string or object | Printed legend(s). |
-| `switch` | string | Switch type reference (e.g. MX, Alps, a vintage-specific type). |
+| `legends` | object | Legend override by position, e.g. `{ "topLeft": "£", "bottomLeft": "3" }`. Absent: the standard legend for the keycode (KEY-025, KEY-026). |
+| `switch` | string | The key switch, e.g. MX, Alps, or a vintage-specific type (KEY-009). Chosen in the properties panel. |
 | `modules` | array of `{type, …}` | Additional per-key modules (KEY-002). |
-| `diode` | `{offset, rotation}` | Per-key override of the key diode's placement (KEY-011). |
+| `diode` | boolean | Key diode Yes/No; default Yes (KEY-018). |
 | `collection` | object | Back-reference to the collection instance the key came from ([05](05-collections.md)). |
 
-- **KEY-006** [Proposed] `legend` is display-only. A keycode MUST NOT be derived from it.
+- **KEY-006** [Decided] Legends are display and BOM data only. A keycode is never derived from a legend.
+- **KEY-023** [Decided] A keycap can carry **several legends**, as is common on retro keyboards (e.g. a shifted symbol above the unshifted one, or graphics characters on the front).
+- **KEY-024** [Proposed] Legend positions are a fixed set: `topLeft`, `topRight`, `centre`, `bottomLeft`, `bottomRight`, `front`.
+- **KEY-025** [Decided] **A key shows the standard legend for its keycode** (e.g. `KC_1` gives `!` and `1`, `KC_G` gives `G`). The user can **override** it.
+- **KEY-026** [Decided] `legends` holds an override only. If it is absent, the key shows the standard legend for its keycode; if present, it replaces the standard legend. There is no per-layout auto-fill. Tools that read the design (ARCH-007) derive the standard legend from the keycode the same way.
 - **KEY-008** [Decided] `keycode` and `layers` are meaningful only to firmware. A keyboard without firmware (PRIN-009, FW-010) does not need them, so they cannot be unconditionally required ([Q08](../decisions/Q08-key-field-defaults.md)).
 
 ## PCB outline

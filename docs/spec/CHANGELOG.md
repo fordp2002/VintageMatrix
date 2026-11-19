@@ -4,6 +4,12 @@ Newest first. One line per change, citing requirement IDs or question numbers.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.5 | 2026-11-19 | Legends simplified: the standard legend for the keycode, with an optional override; `legends` holds only the override (KEY-025, KEY-026 decided). |
+| 0.5 | 2026-11-19 | Multiple legends per keycap (KEY-023; positions KEY-024 proposed; `legend` field becomes `legends`); legends auto-filled from the keycode (KEY-025) without overwriting the user's own (KEY-026 proposed); KEY-006 decided. |
+| 0.5 | 2026-11-19 | ARCH-007: a BOM is a separate program reading the design file; VintageMatrix records the BOM data (KEY-021 reworded). |
+| 0.5 | 2026-11-19 | Keycap row angle and homing mark recorded for a future BOM only (KEY-021 decided, KEY-022 proposed; `keycapRow`, `homing` fields). |
+| 0.5 | 2026-11-19 | Keys have no size property; size comes from the keycap, chosen alongside the switch in the properties panel (KEY-019 decided, KEY-020 proposed); `size` field replaced by `keycap`. |
+| 0.5 | 2026-11-19 | Per-key diode placement override removed (KEY-011); replaced by a per-key Key diode Yes/No setting (KEY-018); KEY-010, PCB-035 updated. |
 | 0.5 | 2026-11-19 | Licence decided: whole project GPL-2.0-or-later, mirroring QMK (LIC-001 to LIC-004), LICENSE added. Outline including cut-outs owned by VintageMatrix (PCB-044, KEY-016 decided; KEY-017 proposed). Target KiCad 10, other versions TBD (KICAD-007, KICAD-014, Q16). |
 | 0.5 | 2026-11-19 | Answers applied: all managed footprints locked (PCB-045); key moves rip up without strong warning (GUI-025); PCB-023, FW-010, GUI-023 decided; never both row and column diodes (MAT-018); key diode placement is a default with per-key override (KEY-011); unconnected is per side (MAT-007, MAT-009, MAT-019, MAT-020, MAT-021, KEY-012, GUI-021, GUI-022, API-010); "+" buttons deferred (GUI-026); README marks schematic generation as awaiting KiCad support. |
 | 0.5 | 2026-11-19 | Ownership rule restated as "only edit things that are ours" (PCB-005, PCB-007, PCB-011); the outline is drawn directly and recognised by VintageMatrix owning the board-edge layer (PCB-044 proposed; PCB-042 removed); KICAD-010 check 7 updated. |
