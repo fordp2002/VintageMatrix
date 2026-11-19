@@ -52,6 +52,8 @@
 - **KEY-007** [Decided] Two kinds of outline are supported:
   - **Rectangle**, the standard built-in outline: `{ "rect": { "x", "y", "w", "h" } }` with dimension values. It is drawn in KiCad as one rectangle, not four lines.
   - **Imported** from a file (KEY-014): a closed path of line and arc segments with dimension-value vertices.
+- **KEY-016** [Decided] **Every aspect of the board outline, including cut-outs, is defined in the design**, never in KiCad. `outline` holds the outer edge plus an optional list of `cutouts`, each a rectangle or a closed path like the outline itself.
+- **KEY-017** [Proposed] On DXF import, the largest closed path becomes the outer edge, and closed paths inside it become cut-outs.
 - **KEY-014** [Decided] An outline can be imported from a DXF file. The geometry is copied into the design (a single source of truth); the DXF file is not needed afterwards.
 - **KEY-015** [Proposed] Import keeps lines, arcs, and circles. Anything else (e.g. splines, text) is rejected with a diagnostic naming it. If the DXF does not state its units, the user is asked. Coordinates become exact decimal strings at import (DIM-001); the conversion from DXF's binary floats happens once, there.
 
@@ -63,6 +65,6 @@
 
 **Add a key field.** Add a row to the table above with a new ID if it carries rules, plus its schema entry and its default.
 
-**Richer outlines** (mounting holes, cut-outs). Extend KEY-007 with new segment or feature types.
+**Richer outlines** (e.g. mounting holes). Extend KEY-007/KEY-016 with new segment or feature types; everything on the board edge stays defined in the design.
 
 **Another import format** (e.g. SVG). Add it beside DXF in KEY-014, with the same rules (KEY-015).

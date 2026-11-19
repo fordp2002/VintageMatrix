@@ -4,6 +4,7 @@ Newest first. One line per change, citing requirement IDs or question numbers.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.5 | 2026-11-19 | Licence decided: whole project GPL-2.0-or-later, mirroring QMK (LIC-001 to LIC-004), LICENSE added. Outline including cut-outs owned by VintageMatrix (PCB-044, KEY-016 decided; KEY-017 proposed). Target KiCad 10, other versions TBD (KICAD-007, KICAD-014, Q16). |
 | 0.5 | 2026-11-19 | Answers applied: all managed footprints locked (PCB-045); key moves rip up without strong warning (GUI-025); PCB-023, FW-010, GUI-023 decided; never both row and column diodes (MAT-018); key diode placement is a default with per-key override (KEY-011); unconnected is per side (MAT-007, MAT-009, MAT-019, MAT-020, MAT-021, KEY-012, GUI-021, GUI-022, API-010); "+" buttons deferred (GUI-026); README marks schematic generation as awaiting KiCad support. |
 | 0.5 | 2026-11-19 | Ownership rule restated as "only edit things that are ours" (PCB-005, PCB-007, PCB-011); the outline is drawn directly and recognised by VintageMatrix owning the board-edge layer (PCB-044 proposed; PCB-042 removed); KICAD-010 check 7 updated. |
 | 0.5 | 2026-11-19 | Board outline: rectangle (standard) or DXF import (KEY-007, KEY-014 decided; KEY-015 proposed); outline managed, updated after routing, and locked in KiCad (PCB-006, PCB-041 decided; PCB-042, PCB-043 proposed); setOutline/importOutline operations; KICAD-010 check 7. |

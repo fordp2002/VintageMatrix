@@ -25,7 +25,7 @@ These candidates are not exhaustive and are not recommendations.
 
 ## Decision
 
-**Capability-based: VintageMatrix supports any KiCad version whose API provides every API element VintageMatrix uses.** There is no fixed version number; the minimum is derived from what the KiCad adapter actually calls.
+**Target KiCad 10; other versions to be decided** (2026-11-19 update). In principle the rule is capability-based: VintageMatrix supports any KiCad version whose API provides every API element VintageMatrix uses.** There is no fixed version number; the minimum is derived from what the KiCad adapter actually calls.
 
 Consequences (KICAD-007, KICAD-011, KICAD-012, KICAD-013):
 

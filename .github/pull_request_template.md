@@ -15,7 +15,7 @@
 - [ ] `docs/spec/CHANGELOG.md` updated (if the spec changed)
 - [ ] No `[Open]` question silently resolved (list any you depended on below)
 - [ ] No dimensions stored as JSON numbers; unknown fields still preserved
-- [ ] No upstream code copied in; no licence headers added or changed
+- [ ] No upstream code copied in; new source files carry `SPDX-License-Identifier: GPL-2.0-or-later`; no existing licence notices removed
 - [ ] Generated artifacts not committed or hand-edited
 - [ ] If the KiCad adapter uses a new API element: list updated, and any rise in the minimum KiCad version stated (KICAD-012)
 - [ ] Anything expensive to reverse is flagged below

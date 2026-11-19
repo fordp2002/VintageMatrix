@@ -7,7 +7,7 @@
 | **Depends on** | [01-contract](01-contract.md), [03-matrix](03-matrix.md), [04-keys](04-keys.md), [11-provenance](11-provenance.md) |
 | **Related questions** | [Q09](../decisions/Q09-autoplacement-routing.md), [Q10](../decisions/Q10-qmk-board-selection.md) |
 
-Licensing note: firmware-side code derived from the GPL-2.0 upstream inherits GPL-2.0 (LIC-002).
+Licensing: the whole project is GPL-2.0-or-later, mirroring QMK (LIC-001).
 
 ## Firmware
 
@@ -42,7 +42,7 @@ Licensing note: firmware-side code derived from the GPL-2.0 upstream inherits GP
 
 ## Extension points
 
-**Add a host interface** (e.g. a vintage machine's native keyboard protocol). Add a `type` value with its own requirement subsection here: its parameters, the upstream code it builds on, and its licence implications. Then add its schema, the firmware support, and the schematic sheet it needs ([08](08-schematic.md#extension-points)). This usually warrants a [feature proposal](../features/README.md).
+**Add a host interface** (e.g. a vintage machine's native keyboard protocol). Add a `type` value with its own requirement subsection here: its parameters and the upstream code it builds on. Then add its schema, the firmware support, and the schematic sheet it needs ([08](08-schematic.md#extension-points)). This usually warrants a [feature proposal](../features/README.md).
 
 **Add a controller module.** Add one module definition file to `controllers/` (FW-014) plus a test that validates it. Like a key collection, this needs no spec change.
 

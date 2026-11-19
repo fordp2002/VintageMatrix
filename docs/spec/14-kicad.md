@@ -20,10 +20,10 @@
 ## Limits of the KiCad API
 
 - **KICAD-006** [Decided] **Schematic generation is future work.** As of KiCad 10, the IPC API covers the PCB editor but not schematic editing. Until it does, VintageMatrix generates no schematic and produces no netlist; the matrix is delivered on the board only (PCB-015 to PCB-017). See [Q14](../decisions/Q14-kicad-api-schematic.md).
-- **KICAD-007** [Decided] **Supported KiCad versions are capability-based.** VintageMatrix supports any KiCad version whose API provides every API element it uses. There is no fixed minimum version number ([Q16](../decisions/Q16-minimum-kicad-version.md)).
+- **KICAD-007** [Decided] **The target is KiCad 10.** Support for other versions is to be decided. In principle, VintageMatrix works with any KiCad version whose API provides every API element it uses ([Q16](../decisions/Q16-minimum-kicad-version.md)).
 - **KICAD-008** [Proposed] **Running KiCad.** The IPC API talks to a running KiCad instance. In KiCad 9/10 that means the GUI; a headless API server is expected in a later release. Until then, generation steps that touch KiCad need KiCad installed and running, including in CI and for AI agents. Everything that doesn't touch KiCad (validation, firmware, the rest of the API) stays fully headless (PRIN-003).
 - **KICAD-009** [Proposed] When KiCad is not reachable, KiCad-dependent operations fail with a clear diagnostic (CON-013) and never fall back to writing files.
-- **KICAD-010** [Decided] **Verify before building on it.** These KiCad behaviours are assumed by PCB-015 to PCB-017 and MUST be confirmed against a real KiCad, with the results and KiCad version recorded here, before the PCB generator is implemented:
+- **KICAD-010** [Decided] **Verify before building on it.** These KiCad behaviours are assumed by the PCB rules and MUST be confirmed against KiCad 10 (KICAD-007), with the results recorded here, before the PCB generator is implemented:
   1. The IPC API can add a footprint, set a custom field on it, and set its **Not in schematic** attribute.
   2. The IPC API can assign a pad to a net by name, including a net that already exists on the board.
   3. *Update PCB from Schematic* leaves **Not in schematic** footprints, and their pad nets, unchanged.
@@ -38,11 +38,11 @@
 - **KICAD-011** [Decided] The KiCad adapter keeps **one list of the API elements it uses**, each with the earliest KiCad version known to provide it. The supported minimum is the latest of those versions, and is stated in the table below.
 - **KICAD-012** [Decided] A change that makes the adapter use a new API element MUST update that list, and MUST say in its PR (and in the spec changelog) if it raises the minimum version.
 - **KICAD-013** [Proposed] On connecting, the adapter checks the running KiCad's version against the minimum, and where possible probes the API elements it needs. If they are not available, it fails with a diagnostic naming the missing element and the required version (KICAD-009), rather than failing partway through an update.
-- **KICAD-014** [Proposed] Automated KiCad tests run against both the minimum supported version and the latest release.
+- **KICAD-014** [Proposed] Automated KiCad tests run against KiCad 10. Other versions are added once their support is decided.
 
 | Supported minimum | Determined by | Verified |
 |---|---|---|
-| *Not yet established* | KICAD-010 verification | — |
+| **KiCad 10** (target; other versions TBD) | KICAD-007 | KICAD-010 checks to be run on KiCad 10 |
 
 ## Extension points
 

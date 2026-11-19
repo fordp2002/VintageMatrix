@@ -34,7 +34,7 @@
 ## External services
 
 - **ARCH-006** [Decided] External services (today only Freerouting, PCB-029) are **optional**. VintageMatrix MUST work fully without them, and an unavailable service only disables the feature that uses it.
-- **LIC-004** [Proposed] Freerouting is used as a separate program or service. It is called, never bundled or linked, so its licence does not apply to VintageMatrix code. Check this with the licensing decision (LIC-001).
+- **LIC-004** [Decided] Freerouting is used as a separate program or service; it is called, never bundled or linked.
 
 ## Upstream projects
 
@@ -50,9 +50,9 @@
 
 ## Licensing
 
-- **LIC-001** [Open, not final] Licensing is expected per-module: MIT on the design side, GPL-2.0 on the firmware side.
-- **LIC-002** [Decided] Firmware-side code derived from GPL-2.0 upstream inherits GPL-2.0.
-- **LIC-003** [Decided] Do not add or change licence headers until licensing is finalised.
+- **LIC-001** [Decided] The whole project mirrors QMK's licence: **GPL-2.0-or-later** ("version 2 of the License, or (at your option) any later version"). There is no per-module split. The full text is in [`LICENSE`](../../LICENSE).
+- **LIC-002** [Decided] Code derived from GPL upstream (QMK, the PS/2 upstream) is compatible with this licence. MIT-licensed upstream code (e.g. `hsgw/keyboard-made-by-python`) may be used under GPL-2.0-or-later, with its MIT notice kept.
+- **LIC-003** [Decided] New source files start with the SPDX identifier `SPDX-License-Identifier: GPL-2.0-or-later`. Never remove or change the licence notice of code that came from elsewhere.
 
 ## Extension points
 
@@ -61,4 +61,4 @@
 2. read only the contract (ARCH-001) and declare which sections it reads;
 3. follow [11-provenance](11-provenance.md);
 4. expose it through `generate` in [07-api](07-api.md);
-5. state its licence side (design or firmware).
+5. use the project licence (LIC-001).

@@ -77,7 +77,7 @@ These are tracked one per file in [`docs/decisions/`](docs/decisions/README.md) 
 
 ## Licensing
 
-Expected to be **per-module**: MIT on the design side, GPL-2.0 on the firmware side. This is **not yet final**. Do not add or change license headers without checking. Firmware-side code derived from the GPL-2.0 upstream inherits GPL-2.0.
+The whole project is **GPL-2.0-or-later**, mirroring QMK (LIC-001); see [`LICENSE`](LICENSE). Start new source files with `SPDX-License-Identifier: GPL-2.0-or-later`. Never remove or change the licence notice of code that came from elsewhere (LIC-003).
 
 ## Working style
 

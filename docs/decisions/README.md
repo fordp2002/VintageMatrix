@@ -19,7 +19,7 @@ Each open question lives in its own file, so settling one is a small, reviewable
 | [Q13](Q13-attaching-generated-sheets.md) | How generated sheets are attached to the hierarchy | Deferred |
 | [Q14](Q14-kicad-api-schematic.md) | Schematic generation path | **Decided**: no netlist; board-only matrix joined by net name; schematic generation is future work |
 | [Q15](Q15-tagging-untaggable-pcb-items.md) | Tagging PCB elements that can't carry fields | **Decided**: we only generate tagged things |
-| [Q16](Q16-minimum-kicad-version.md) | Minimum supported KiCad version | **Decided**: any version providing the API elements used |
+| [Q16](Q16-minimum-kicad-version.md) | Minimum supported KiCad version | **Decided**: target KiCad 10; other versions TBD |
 | [Q17](Q17-connecting-other-pins.md) | Connecting controller pins beyond the matrix | Deferred |
 
 ## Rules for contributors and AI agents

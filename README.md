@@ -73,7 +73,7 @@ VintageMatrix builds on, but does not fork, these projects:
 | [`hsgw/keyboard-made-by-python`](https://github.com/hsgw/keyboard-made-by-python) | Design/hardware layer (Python, notebooks, KiCad) | MIT (except bundled assets) |
 | [`BuzzL123/QMK-PS2-USB-Dual-Mode-Keyboard`](https://github.com/BuzzL123/QMK-PS2-USB-Dual-Mode-Keyboard) | Firmware/protocol layer (QMK, USB HID + PS/2) | GPL-2.0 |
 
-Licensing is expected to be **per-module**: MIT on the design side, GPL-2.0 on the firmware side. This is not yet final.
+VintageMatrix as a whole is licensed **GPL-2.0-or-later**, mirroring QMK.
 
 ---
 
@@ -112,4 +112,4 @@ Please read the [Manifesto](#manifesto) first — it sets the terms for collabor
 
 ## License
 
-Not yet finalized. See [Lineage](#lineage) for the licenses of upstream projects this work builds upon.
+**GPL-2.0-or-later**, mirroring [QMK](https://github.com/qmk/qmk_firmware). See [`LICENSE`](LICENSE). Code taken from upstream projects keeps its original notices; see [Lineage](#lineage).
