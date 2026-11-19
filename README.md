@@ -4,7 +4,9 @@
 >
 > 🤖 **This project is AI-coded.** A substantial portion of the code, docs, and generated artifacts are produced with AI assistance, reviewed and directed by humans.
 
-**VintageMatrix** is an app and reusable framework for designing **nonstandard input devices** — with a focus on **8-bit and 16-bit era home computers** and **serial terminals**.
+**VintageMatrix is for anyone designing a matrix-based keyboard PCB and/or firmware to support a matrix keyboard. Its focus is on keyboards that are non-standard by today's standards.**
+
+It is an app and reusable framework, with particular attention to **8-bit and 16-bit era home computers** and **serial terminals**.
 
 It is built to be driven by **humans and AI alike**: everything the GUI can do is available programmatically, through a single versioned JSON configuration contract.
 
@@ -41,8 +43,8 @@ Nothing here should be relied upon for production use yet. The design decisions 
 
 VintageMatrix treats the **keyboard matrix as the spine** of the whole design. One source of truth — the matrix model — flows into:
 
-- **Schematic generation** — keyboard schematics as multi-sheet KiCad, one sheet per application/module
-- **PCB generation** — keys placed automatically from their stem-centre positions
+- **PCB generation**: keys, diodes, and controllers placed from their positions, joined by net name to your own KiCad schematic
+- **Schematic generation**: *awaiting KiCad support*. Multi-sheet KiCad schematics will follow once KiCad's Python API can edit schematics.
 - **Firmware configuration** — QMK, targeting **any QMK-supported microcontroller**
 - **Interface selection** — USB HID, PS/2 (Scan Code Set 2), or serial
 
@@ -103,6 +105,7 @@ Please read the [Manifesto](#manifesto) first — it sets the terms for collabor
 - **On-topic contributions are welcome:** code, docs, schemas, tests, retro device presets, design critique, and issues.
 - **Off-topic changes should be forked.** If your idea serves a different purpose, take it to a fork — and open an issue if you think it belongs here instead.
 - **AI-generated contributions are expected and acceptable.** Human review and direction are required.
+- **Start here:** [`AGENTS.md`](AGENTS.md) (workflow for humans and AI tools), the [specification](docs/spec/README.md), [open questions](docs/decisions/README.md), and [feature proposals](docs/features/README.md).
 - The project is in its design phase, so **design discussion is the most valuable contribution right now.**
 
 ---
