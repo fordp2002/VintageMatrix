@@ -92,7 +92,7 @@ Licensing is expected to be **per-module**: MIT on the design side, GPL-2.0 on t
 - **Serial terminals:** DEC VT-series, ADM-3A, Wyse, Teletype-style devices
 - **Interfaces:** USB HID, PS/2, serial
 
-Modern PCB-style keyboards are possible, but not the focus.
+Modern PC-style keyboards are possible, but not the focus.
 
 ---
 
