@@ -46,7 +46,7 @@ VintageMatrix treats the **keyboard matrix as the spine** of the whole design. O
 - **Firmware configuration** — QMK, targeting **any QMK-supported microcontroller**
 - **Interface selection** — USB HID, PS/2 (Scan Code Set 2), or serial
 
-The design screen is the human-facing heart: a canvas with the PCB outline, the keys, and an optional scaled reference image (a front-on photo or sketch) for tracing and recreating vintage boards.
+The design screen is the human-facing heart: a canvas with the PCB outline, the keys, and an optional scaled reference image (a front-on photo or sketch) for tracing and recreating vintage keyboards.
 
 ---
 
